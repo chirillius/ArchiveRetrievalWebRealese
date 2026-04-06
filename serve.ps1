@@ -1,4 +1,6 @@
 $ErrorActionPreference = 'Stop'
+[Console]::InputEncoding = [System.Text.UTF8Encoding]::new($false)
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $distDir = Join-Path $scriptDir 'dist'
