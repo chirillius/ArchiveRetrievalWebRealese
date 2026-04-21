@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 $ErrorActionPreference = 'Stop'
+=======
+﻿$ErrorActionPreference = 'Stop'
+[Console]::InputEncoding = [System.Text.UTF8Encoding]::new($false)
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
+>>>>>>> Stashed changes
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $distDir = Join-Path $scriptDir 'dist'
@@ -94,7 +100,7 @@ try {
             $context.Response.OutputStream.Close()
         } catch {
             try {
-                $message = [System.Text.Encoding]::UTF8.GetBytes("Internal server error")
+                $message = [System.Text.Encoding]::UTF8.GetBytes('Internal server error')
                 $context.Response.StatusCode = 500
                 $context.Response.ContentType = 'text/plain; charset=utf-8'
                 $context.Response.ContentLength64 = $message.Length
